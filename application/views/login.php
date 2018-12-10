@@ -22,7 +22,7 @@
     <div class="col-md-6 col-md-offset-3 vertical-off-4">
       <div class="panel panel-default login-form">
         <div class="panel-body">
-          <form class="" action="<?php echo base_url('index.php/users/login') ?>" id="loginForm" method="post">
+          <form class="" action="<?php echo base_url('users/login') ?>" id="loginForm" method="post">
             <fieldset>
               <legend>Login</legend>
 
