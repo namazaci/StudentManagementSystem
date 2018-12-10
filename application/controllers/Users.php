@@ -71,14 +71,21 @@ class Users extends MY_Controller
 
     public function validate_username()
     {
-      $validate = $this->model_users->validate_username($this->input->post('username'));
+        $validate = $this->model_users->validate_username($this->input->post('username'));
 
-      if($validate == true) {
-          return true;
-      }
-      else {
-          $this->form_validation->set_message('validate_username', 'The {field} does not exist');
-          return false;
-      }
+        if($validate == true) {
+            return true;
+        }
+        else {
+            $this->form_validation->set_message('validate_username', 'The {field} does not exist');
+            return false;
+        }
+    }
+
+    public function logout()
+    {
+        $this->load->library('session');
+        $this->session->sess_destroy();
+        redirect('login', 'refresh');
     }
 }
