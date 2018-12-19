@@ -9,6 +9,13 @@ class Pages extends MY_Controller
 				show_404();
 			}
 
+			if($page == 'setting') {
+				$this->load->model('model_users');
+				$this->load->library('session');
+				$userId = $this->session->userdata('id');
+				$data['userdata'] = $this->model_users->fetchUserData($userId);
+			}
+
 			$data['title'] = ucfirst($page);
 
 			if($page == 'login') {
