@@ -58,7 +58,7 @@
         </li>
 
         <li id="topClassMainNav">
-          <a href="<?php echo base_url('teacher') ?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <a href="<?php echo base_url('teacher') ?>">
             <i class="glyphicon glyphicon-briefcase"></i> Teacher</a>
         </li>
 
