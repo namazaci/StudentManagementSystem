@@ -170,3 +170,7 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript" src="<?php echo base_url('custom/js/teacher.js') ?>">
+
+</script>

@@ -12,3 +12,12 @@
     padding: 10px;
     font-size: 20px;
 }
+
+.candidate-photo {
+  width: 65px;
+  height: 70px;
+}
+
+.calendars-popup {
+    z-index: 10000;
+}

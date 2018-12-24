@@ -31,4 +31,19 @@ class Model_teacher extends CI_Model
     $status = $this->db->insert('teachers', $insert_data);
     return ($status == true) ? true : false;
   }
+
+  public function fetchTeacherData($teacherId = null)
+  {
+      if($teacherId) {
+        $sql = "SELECT * FROM teachers WHERE teacher_id = ?";
+        $query = $this->db->query($sql, array($teacherId));
+        $result = $query->row_array();
+        return $result;
+      }
+
+      $sql = "SELECT * FROM teachers";
+      $query = $this->db->query($sql);
+      $result = $query->result_array();
+      return $result;
+  }
 }

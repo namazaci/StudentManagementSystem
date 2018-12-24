@@ -93,4 +93,44 @@ class Teacher extends MY_Controller
       }
     }
   }
+
+  public function fetchTeacherData($teacherId = null)
+  {
+      if($teacherId) {
+          $result = $this->model_teacher->fetchTeacherData($teacherId);
+      }
+      else{
+        $teacherData = $this->model_teacher->fetchTeacherData();
+        $result = array('data' => array());
+
+        foreach ($teacherData as $key => $value) {
+
+          $button = '
+          <!-- Single button -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Action <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a type="button" data-toggle="modal" data-target="#updateTeacherModel" onclick="editTeacher('.$value['teacher_id'].')"> <i class="glyphicon glyphicon-edit"></i> Edit </a></li>
+              <li><a type="button" data-toggle="modal" data-target="#removeTeacherModel" onclick="removeTeacher('.$value['teacher_id'].')"> <i class="glyphicon glyphicon-trash"></i> Remove </a></li>
+            </ul>
+          </div>
+          ';
+
+          $photo = '<img src="'.base_url().$value['image'].'" alt="Photo" class="img-circle candidate-photo"/>';
+
+          $result['data'][$key] = array(
+              $photo,
+              $value['fname'] . ' ' . $value['lname'],
+              $value['age'],
+              $value['contact'],
+              $value['email'],
+              $button
+          );
+      }
+    }
+
+    echo json_encode($result);
+  }
 }

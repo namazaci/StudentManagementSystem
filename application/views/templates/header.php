@@ -7,7 +7,12 @@
       <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>">
       <!-- bootstrap theme -->
       <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap-theme.min.css') ?>">
-
+      <!-- datatables css -->
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/datatables/datatables.min.css') ?>">
+      <!-- keith calendar css -->
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/keith-calendar/css/jquery.calendars.picker.css') ?>">
+      <!-- fileinput -->
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/fileinput/kartik-v-bootstrap-fileinput-c3e9f9f/css/fileinput.min.css') ?>">
       <!-- custom css -->
       <link rel="stylesheet" type="text/css" href="<?php echo base_url('custom/css/custom.css') ?>">
 
@@ -16,10 +21,20 @@
 
       <!-- bootstrap js -->
       <script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
+      <script type="text/javascript" src="<?php echo base_url('assets/datatables/datatables.min.js'); ?>"></script>
+
+      <script type="text/javascript" src="<?php echo base_url('assets/keith-calendar/js/jquery.calendars.js') ?>"></script>
+      <script type="text/javascript" src="<?php echo base_url('assets/keith-calendar/js/jquery.calendars.plus.js') ?>"></script>
+      <script type="text/javascript" src="<?php echo base_url('assets/keith-calendar/js/jquery.plugin.js') ?>"></script>
+      <script type="text/javascript" src="<?php echo base_url('assets/keith-calendar/js/jquery.calendars.picker.js') ?>"></script>
+      <!-- fileinput -->
+      <script type="text/javascript" src="<?php echo base_url('assets/fileinput/kartik-v-bootstrap-fileinput-c3e9f9f/js/fileinput.min.js') ?>"></script>
+
   </head>
   <body>
 
-    <nav class="navbar navbar-default">
+<input type="hidden" id="base_url" value="<?php echo base_url() ?>">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
