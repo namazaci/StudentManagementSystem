@@ -16,7 +16,7 @@ class Users extends MY_Controller
 
     public function login()
     {
-        $validator = array('success' => false, 'message' => array());
+        $validator = array('success' => false, 'messages' => array());
 
         $validate_data = array(
             array(
