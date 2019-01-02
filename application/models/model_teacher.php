@@ -1,11 +1,18 @@
 <?php
 
-class Model_teacher extends CI_Model
+class Model_Teacher extends CI_Model
 {
   public function __construct()
   {
     parent::__construct();
   }
+
+  /*
+	*------------------------------------
+	* inserts the teachers information
+	* into the database
+	*------------------------------------
+	*/
 
   public function create($img_url)
   {
@@ -32,6 +39,12 @@ class Model_teacher extends CI_Model
     return ($status == true) ? true : false;
   }
 
+  /*
+	*------------------------------------
+	* retrieves teacher information
+	*------------------------------------
+	*/
+
   public function fetchTeacherData($teacherId = null)
   {
       if($teacherId) {
@@ -45,5 +58,67 @@ class Model_teacher extends CI_Model
       $query = $this->db->query($sql);
       $result = $query->result_array();
       return $result;
+  }
+
+  /*
+	*------------------------------------
+	* updates teacher information
+	*------------------------------------
+	*/
+  public function updateInfo($teacherId = null)
+  {
+    if($teacherId) {
+      $update_data = array(
+        'register_date'   => $this->input->post('editRegisterDate'),
+        'fname'           => $this->input->post('editFname'),
+        'lname'           => $this->input->post('editLname'),
+        'date_of_birth'   => $this->input->post('editDob'),
+        'age'             => $this->input->post('editAge'),
+        'contact'         => $this->input->post('editContact'),
+        'email'           => $this->input->post('editEmail'),
+        'address'         => $this->input->post('editAddress'),
+        'city'            => $this->input->post('editCity'),
+        'country'         => $this->input->post('editCountry'),
+        'job_type'        => $this->input->post('editJobType')
+      );
+
+      $this->db->where('teacher_id', $teacherId);
+      $query = $this->db->update('teachers', $update_data);
+
+      return($query == true ? true: false);
+    }
+  }
+
+  /*
+	*------------------------------------
+	* updates teacher information
+	*------------------------------------
+	*/
+  public function updatePhoto($teacherId = null, $imageUrl = null)
+  {
+    if($teacherId && $imageUrl) {
+      $update_data = array(
+        'image' => $imageUrl
+      );
+
+      $this->db->where('teacher_id', $teacherId);
+      $query = $this->db->update('teachers', $update_data);
+
+      return ($query === true ? true : false);
+    }
+  }
+
+  /*
+  *------------------------------------
+  * removes teacher information
+  *------------------------------------
+  */
+  public function remove($teacherId = null)
+  {
+    if($teacherId) {
+      $this->db->where('teacher_id', $teacherId);
+      $result = $this->db->delete('teachers');
+      return ($result == true) ? true : false;
+    }// if
   }
 }

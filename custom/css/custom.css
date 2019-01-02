@@ -18,6 +18,11 @@
   height: 70px;
 }
 
+.image-photo {
+  width: 65px;
+  height: 80px;
+}
+
 .calendars-popup {
     z-index: 10000;
 }
