@@ -121,4 +121,16 @@ class Model_Teacher extends CI_Model
       return ($result == true) ? true : false;
     }// if
   }
+
+  /*
+	*------------------------------------
+	* count total teacher information
+	*------------------------------------
+	*/
+  public function countTotalTeacher()
+	{
+		$sql = "SELECT * FROM teachers";
+		$query = $this->db->query($sql);
+		return $query->num_rows();
+	}
 }
