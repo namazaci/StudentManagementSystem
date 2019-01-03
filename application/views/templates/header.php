@@ -19,7 +19,10 @@
       <!-- jquery -->
       <script type="text/javascript" src="<?php echo base_url('assets/jquery/jquery.min.js'); ?>"></script>
 
-
+      <link rel="stylesheet" href="<?php echo base_url('assets/fullcalendar/fullcalendar-3.9.0/fullcalendar.min.css') ?>" />
+                 <script src="<?php echo base_url('assets/fullcalendar/fullcalendar-3.9.0/lib/moment.min.js') ?>"></script>
+                 <script src="<?php echo base_url('assets/fullcalendar/fullcalendar-3.9.0/fullcalendar.min.js') ?>"></script>
+                 <script src="<?php echo base_url('assets/fullcalendar/fullcalendar-3.9.0/gcal.js') ?>"></script>
 
   </head>
   <body>
