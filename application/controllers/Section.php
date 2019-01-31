@@ -19,6 +19,8 @@ class Section extends MY_Controller
 		$this->load->library('form_validation');
 	}
 
+
+
   /*
 	*----------------------------------------------
 	* fetches the class's section table
@@ -26,6 +28,7 @@ class Section extends MY_Controller
 	*/
 	public function fetchSectionTable($classId = null)
 	{
+			$this->load->view('templates/header');
 		if($classId) {
 			$sectionData = $this->model_section->fetchSectionDataByClass($classId);
 			$classData = $this->model_classes->fetchClassData($classId);
@@ -86,7 +89,10 @@ class Section extends MY_Controller
 			</table>
 			';
 			echo $table;
-      $this->load->view('section', $classData);
+
+
+      $this->load->view('section', ['classData' => $classData]);
+			$this->load->view('templates/footer');
 		}
 	}
 
