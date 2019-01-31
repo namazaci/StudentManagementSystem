@@ -13,22 +13,21 @@
 
 			<div class="list-group">
 				<?php
-				if($classData) {
+				if($classData):
 					$x = 1;
-					foreach ($classData as $value) {
+					foreach ($classData as $value):
 					?>
 						<a class="list-group-item classSideBar <?php if($x == 1) { echo 'active'; } ?>" onclick="getClassSection(<?php echo $value['class_id'] ?>)" id="classId<?php echo $value['class_id'] ?>">
 				    		<?php echo $value['class_name']; ?>(<?php echo $value['numeric_name']; ?>)
 					  	</a>
 					<?php
 					$x++;
-					}
-				}
-				else {
+        endforeach;
+				else:
 					?>
 					<a class="list-group-item">No Data</a>
 					<?php
-				}
+				endif;
 				?>
 			</div>
 
